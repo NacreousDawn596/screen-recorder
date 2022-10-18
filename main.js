@@ -1,10 +1,8 @@
-const sleep = ms => new Promise(r => setTimeout(r, ms));
-
 window.addEventListener("load", () => {
     document.getElementById("record").onclick = function (){
         window.stream = navigator.mediaDevices.getDisplayMedia({
             video: true,
-            audio: confirm("wanna record the audio too?")
+            audio: confirm("do you want to record the audio too?")
         })
         window.stream.then((stream) => {
             console.log("streaming!!")
@@ -40,7 +38,7 @@ window.addEventListener("load", () => {
     
             a = window.document.createElement("a")
             a.href = URL.createObjectURL(window.blob)
-            a.download = prompt("enter filename") + ".webm"
+            a.download = prompt("can you please enter the filename (the extension will be .webm)") + ".webm"
             document.body.appendChild(a)
             a.click()
             document.body.removeChild(a) 
