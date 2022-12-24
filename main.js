@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
         window.stream.then((stream) => {
             console.log("streaming!!")
             window.recorder = new MediaRecorder(stream, {
-                mimeType: "video/mp4; codecs=avc"
+                mimeType: "video/mp4; codecs=vp9"
             })
             window.chunks = [];
             window.recorder.ondataavailable = function(e){
