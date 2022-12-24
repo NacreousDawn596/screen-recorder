@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
         window.stream.then((stream) => {
             console.log("streaming!!")
             window.recorder = new MediaRecorder(stream, {
-                mimeType: "video/mp4; codecs=vp9"
+                mimeType: "video/webm; codecs=vp8"
             })
             window.chunks = [];
             window.recorder.ondataavailable = function(e){
@@ -38,7 +38,7 @@ window.addEventListener("load", () => {
     
             a = window.document.createElement("a")
             a.href = URL.createObjectURL(window.blob)
-            a.download = (prompt("can you please enter the filename (the extension will be .mp4)") || "recorded") + ".mp4"
+            a.download = (prompt("can you please enter the filename (the extension will be .mp4)") || "recorded") + ".webm"
             document.body.appendChild(a)
             a.click()
             document.body.removeChild(a) 
